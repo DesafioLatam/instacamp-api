@@ -16,6 +16,8 @@ gem 'carrierwave'
 
 gem 'active_model_serializers', '~> 0.10.0.rc2'
 
+gem 'dotenv-rails'
+
 group :development do
   gem 'pry-rails'
   gem 'rspec-rails'
