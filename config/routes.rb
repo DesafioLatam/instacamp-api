@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  namespace :v1, constraints: {subdomain: 'api'} do
+  namespace :v1 do
     resources :captures, except: [:new, :edit]
   end
 
