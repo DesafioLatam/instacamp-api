@@ -20,7 +20,6 @@ gem 'dotenv-rails'
 
 group :development do
   gem 'pry-rails'
-  gem 'rspec-rails'
   gem 'quiet_assets'
   gem 'better_errors'
 

@@ -1,0 +1,9 @@
+LOG:  database system was shut down at 2015-07-14 22:01:23 CLT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "instacamp_development" does not exist
+ERROR:  database "instacamp_development" already exists
+STATEMENT:  CREATE DATABASE "instacamp_development" ENCODING = 'unicode'
+ERROR:  database "instacamp_test" already exists
+STATEMENT:  CREATE DATABASE "instacamp_test" ENCODING = 'unicode'

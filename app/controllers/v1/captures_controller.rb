@@ -1,5 +1,6 @@
 class V1::CapturesController < ApplicationController
   before_action :set_capture, only: [:show, :update, :destroy]
+  before_action :authenticate_with_token!, except: [:index, :show]
 
   # GET /captures
   # GET /captures.json
@@ -19,6 +20,7 @@ class V1::CapturesController < ApplicationController
   # POST /captures.json
   def create
     @capture = Capture.new(capture_params)
+    @capture.user = current_user
 
     if @capture.save
       render json: @capture, status: :created
