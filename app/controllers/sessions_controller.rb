@@ -11,14 +11,14 @@ class SessionsController < ApplicationController
       user = User.find_by(email: user_email)
 
       if user.nil?
-        render json: {errors: "Invalid email"}, status: 422
+        render json: {errors: "Invalid email"}, status: 403
       elsif user.valid_password? user_password
         sign_in user, store: false
         user.generate_authentication_token!
         user.save
         render json: user, status: 200
       else
-        render json: {errors: "Invalid Password Stupid!"}, status: 422
+        render json: {errors: "Invalid Password Stupid!"}, status: 403
       end
     end
   end
