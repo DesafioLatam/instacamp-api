@@ -18,6 +18,8 @@ gem 'active_model_serializers', '~> 0.10.0.rc2'
 
 gem 'dotenv-rails'
 
+gem 'rack-cors'
+
 group :development do
   gem 'pry-rails'
   gem 'quiet_assets'

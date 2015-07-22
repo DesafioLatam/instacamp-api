@@ -63,9 +63,10 @@ class V1::CapturesController < ApplicationController
       the_params
     end
 
-    def parse_image_data(base64_image)
-      filename = 'upload-image'
-      in_content_type, encoding, string = base64_image.split(/[:;,]/)[1..3]
+    def parse_image_data(image)
+      filename = image["filename"]
+      in_content_type = image["filetype"]
+      string = image["base64"]
 
       @tempfile = Tempfile.new(filename)
       @tempfile.binmode
