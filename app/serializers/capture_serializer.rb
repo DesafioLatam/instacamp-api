@@ -4,7 +4,7 @@ class CaptureSerializer < ActiveModel::Serializer
   belongs_to :user
 
   def photo
-    object.photo.url
+    object.photo.path
   end
 
   def user
