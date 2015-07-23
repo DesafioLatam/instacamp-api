@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :destroy]
   resources :sessions, only: [:create, :destroy]
 
-  namespace :v1 do
+  namespace :v1, constraints: { subdomain: 'api' } do
     resources :captures, except: [:new, :edit]
   end
 
