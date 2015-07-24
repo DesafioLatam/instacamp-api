@@ -1,16 +1,16 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'instacamp'
+set :application, 'instacamp-api'
 set :scm, :git
 set :repo_url, 'git@github.com:DesafioLatam/instacamp-api.git'
 set :branch, 'master'
 set :deploy_via, :copy
 set :user, 'deploy'
 
-set :deploy_to, '/home/deploy/instacamp'
+set :deploy_to, '/home/deploy/instacamp-api'
 set :linked_files, %w{config/database.yml .env}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 
 namespace :deploy do
   desc 'Restart application'
