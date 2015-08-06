@@ -5,9 +5,9 @@ class UsersController < ApplicationController
 
     if user.save
       sign_in user, store: false
-      render json: user, status: 201
+      render json: user, status: :created
     else
-      render json: {errors: "No se puede crear el usuario"}, status: 422
+      render json: {errors: "No se puede crear el usuario"}, status: :unprocessable_entity
     end
   end
 

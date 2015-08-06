@@ -11,7 +11,7 @@ class ApplicationController < ActionController::API
     end
 
     def authenticate_with_token!
-      render json: {errors: 'Not authenticated'}, status: 401 if current_user.nil?
+      render json: {errors: 'Not authenticated'}, status: :unauthorized if current_user.nil?
     end
 
 end
