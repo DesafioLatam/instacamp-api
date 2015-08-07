@@ -1,4 +1,5 @@
 set :stage, :production
+set :rails_env, :production
 
 # Simple Role Syntax
 # ==================
@@ -15,6 +16,4 @@ role :db,  %w{104.236.63.176}
 # definition into the server list. The second argument
 # is something that quacks like a hash and can be used
 # to set extended properties on the server.
-server '104.236.63.176', user: 'deploy', roles: %w{web app db}
-
-set :rails_env, :production
+server '104.236.63.176', user: 'deploy', roles: %w{web app db}, primary: true

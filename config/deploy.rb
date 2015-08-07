@@ -11,7 +11,9 @@ set :scm, :git
 set :repo_url, 'git@github.com:DesafioLatam/instacamp-api.git'
 set :branch, 'master'
 
-set :linked_files, %w{config/database.yml .env}
+set :linked_files, %w{config/database.yml config/secrets.yml config/.env}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+
+set :keep_releases, 4
 
 set :passenger_restart_with_touch, false

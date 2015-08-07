@@ -1,18 +1,26 @@
 namespace :setup do
 
   desc "Upload database.yml file."
-  task :upload_yml do
+  task :database do
     on roles(:app) do
       execute "mkdir -p #{shared_path}/config"
       upload! StringIO.new(File.read("config/database.yml")), "#{shared_path}/config/database.yml"
     end
   end
 
-  desc "Upload .env file."
-  task :upload_env do
+  desc "Upload secrests.yml file."
+  task :secrets do
     on roles(:app) do
       execute "mkdir -p #{shared_path}/config"
-      upload! StringIO.new(File.read(".env")), "#{shared_path}/.env"
+      upload! StringIO.new(File.read("config/secrets.yml")), "#{shared_path}/config/secrets.yml"
+    end
+  end
+
+  desc "Upload .env file."
+  task :env do
+    on roles(:app) do
+      execute "mkdir -p #{shared_path}/config"
+      upload! StringIO.new(File.read(".env")), "#{shared_path}/config/.env"
     end
   end
 

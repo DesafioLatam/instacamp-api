@@ -20,6 +20,8 @@ gem 'dotenv-rails'
 
 gem 'rack-cors'
 
+gem 'seed_dump'
+
 group :development do
   gem 'pry-rails'
   gem 'quiet_assets'
