@@ -20,7 +20,7 @@ namespace :setup do
   task :env do
     on roles(:app) do
       execute "mkdir -p #{shared_path}/config"
-      upload! StringIO.new(File.read(".env")), "#{shared_path}/config/.env"
+      upload! StringIO.new(File.read(".env")), "#{shared_path}/.env"
     end
   end
 
