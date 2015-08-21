@@ -25,7 +25,7 @@ namespace :setup do
   end
 
   desc "Seed the database."
-  task :seed_db do
+  task :seed do
     on roles(:app) do
       within "#{current_path}" do
         with rails_env: :production do
