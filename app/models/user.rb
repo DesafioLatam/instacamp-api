@@ -12,5 +12,5 @@ class User < ActiveRecord::Base
     end while self.class.exists?(auth_token: auth_token)
   end
 
-  has_many :captures
+  has_many :captures, dependent: :destroy
 end

@@ -22,6 +22,8 @@ gem 'rack-cors'
 
 gem 'seed_dump'
 
+gem 'faker'
+
 group :development do
   gem 'pry-rails'
   gem 'quiet_assets'
